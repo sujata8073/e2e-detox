@@ -178,9 +178,9 @@ jobs:
           at: .
       - checkout
       - node-version
-      - bundle-dependencies
-      - npm-dependencies
-      - react-native-dependencies
+      #- bundle-dependencies
+      #- npm-dependencies
+      #- react-native-dependencies
       - gradle-dependencies
       - android-sdk-dependencies
       - create-launch-android-emulator
