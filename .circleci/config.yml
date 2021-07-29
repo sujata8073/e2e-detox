@@ -8,7 +8,7 @@ commands:
       - run:
           name: 'Install Project Node'
           command: |
-            apt-get install curl -y
+            
             set +x
             source ~/.bashrc
 
@@ -181,14 +181,16 @@ commands:
 jobs:
 
   android-test:
-    docker:
-      #- image: cimg/openjdk:8.0
-       - image: juniper/openjnpr-container-vmx:bionic
-    #macos:
-     # xcode: 11.3.1
+   # docker:
+    #    - image: cimg/openjdk:8.0
+      # - image: juniper/openjnpr-container-vmx:bionic
+    macos:
+      xcode: 11.3.0
     steps:
+      - run: xcodebuild -version
       - attach_workspace:
           at: .
+   
       - checkout
       - node-version
       #- bundle-dependencies
