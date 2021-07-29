@@ -146,6 +146,9 @@ commands:
           name: create AVD
           command: echo "no" | avdmanager --verbose create avd --force --name "Pixel_3a_API_29" --package "system-images;android-29;google_apis;x86_64"
       - run:
+          name: Check cpu status
+          command: egrep -c '(vmx|svm)' /proc/cpuinfo
+      - run:
           name: Install qem-kvm
           command: sudo apt-get install qemu-kvm
       - run:
