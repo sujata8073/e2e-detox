@@ -145,7 +145,12 @@ commands:
       - run:
           name: create AVD
           command: echo "no" | avdmanager --verbose create avd --force --name "Pixel_3a_API_29" --package "system-images;android-29;google_apis;x86_64"
-
+      - run:
+          name: Install CPU checker
+          command: sudo apt install cpu-checker
+      - run:
+          name: check KVM status
+          command: kvm-ok
       - run:
           name: start AVD
           command: emulator @Pixel_3a_API_29 -no-window -no-audio
