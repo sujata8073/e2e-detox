@@ -182,7 +182,7 @@ jobs:
    
       - run:
           name: Check cpu status
-          command: egrep -c '(vmx|svm)' /proc/cpuinfo
+          command: cat /proc/cpuinfo
       - run:
           name: Install qem-kvm
           command: sudo apt-get install qemu-kvm
