@@ -197,10 +197,12 @@ jobs:
           command: sudo apt list --upgradable    
       - run:
           name: Install qem-kvm
-          command: | 
-                sudo apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
-                sudo apt upgrade
-                sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils
+          command: sudo apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+                
+      - run:
+          name: Install qem-kvm
+          command: sudo apt-get install qemu-kvm libvirt-bin virtinst bridge-utils cpu-checker
+     
       - run:
           name: update packages
           command: sudo apt-get update          
