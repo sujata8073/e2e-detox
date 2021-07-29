@@ -208,7 +208,7 @@ jobs:
           command: sudo apt-get update
       - run:
           name: add user to libvertd
-          command: sudo adduser `id -un` libvirtd
+          command: sudo adduser `id -un` libvirt
                     
                 
       
