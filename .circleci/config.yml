@@ -194,7 +194,10 @@ jobs:
           command: sudo apt update
       - run:
           name: Install qem-kvm
-          command: sudo apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+          command: | 
+                sudo apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+                sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils
+                sudo aptitude install kvm libvirt-bin ubuntu-vm-builder bridge-utils
       #- run:
        #   name: Install CPU checker
         #  command: sudo apt-get install cpu-checker
