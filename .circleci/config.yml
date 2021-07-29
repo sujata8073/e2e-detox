@@ -193,6 +193,9 @@ jobs:
           name: update packages
           command: sudo apt update
       - run:
+          name: list of upgradable packages
+          command: sudo apt list --upgradable    
+      - run:
           name: Install qem-kvm
           command: | 
                 sudo apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
