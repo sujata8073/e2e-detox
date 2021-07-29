@@ -198,7 +198,10 @@ jobs:
       - run:
           name: Install qem-kvm
           command: sudo apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
-                
+      - run:
+          name: Install kvm
+          command: sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils
+                    
       - run:
           name: Install qem-kvm
           command: sudo apt install qemu qemu-kvm virt-manager
@@ -210,9 +213,9 @@ jobs:
       - run:
           name: Install CPU checker
           command: sudo apt-get install cpu-checker
-      #- run:
-         # name: check KVM status
-          #command: sudo kvm-ok
+      - run:
+          name: check KVM status
+          command: sudo kvm-ok
       - checkout
       - node-version
       #- bundle-dependencies
