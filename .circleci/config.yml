@@ -201,7 +201,7 @@ jobs:
                 
       - run:
           name: Install qem-kvm
-          command: sudo apt-get install qemu-kvm libvirt-bin virtinst bridge-utils cpu-checker
+          command: sudo apt install qemu qemu-kvm virt-manager
      
       - run:
           name: update packages
