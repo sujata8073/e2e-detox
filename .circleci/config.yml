@@ -191,7 +191,7 @@ jobs:
           command: uname -m
       - run:
           name: update packages
-          command: apt update
+          command: sudo apt update
       - run:
           name: Install qem-kvm
           command: sudo apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
