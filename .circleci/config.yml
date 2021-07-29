@@ -199,6 +199,8 @@ jobs:
           name: Install qem-kvm
           command: | 
                 sudo apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+                sudo apt upgrade
+                sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils
       - run:
           name: update packages
           command: sudo apt-get update          
