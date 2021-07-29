@@ -189,9 +189,9 @@ jobs:
       - run:
           name: uname -m
           command: uname -m
-      #- run:
-        #  name: Install qem-kvm
-         # command: sudo apt-get install qemu-kvm
+      - run:
+          name: Install qem-kvm
+          command: sudo apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
       #- run:
        #   name: Install CPU checker
         #  command: sudo apt-get install cpu-checker
