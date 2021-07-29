@@ -204,12 +204,13 @@ jobs:
           command: sudo apt install qemu qemu-kvm virt-manager
      
       - run:
-          name: Install kvm
-          command: sudo aptitude install kvm libvirt-bin ubuntu-vm-builder bridge-utils
-                    
-      - run:
           name: update packages
-          command: sudo apt-get update          
+          command: sudo apt-get update
+      - run:
+          name: add user to libvertd
+          command: sudo adduser `id -un` libvirtd
+                    
+                
       
       - run:
           name: Install CPU checker
