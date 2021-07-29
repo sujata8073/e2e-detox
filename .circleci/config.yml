@@ -191,7 +191,7 @@ jobs:
           command: uname -m
       - run:
           name: update packages
-          command: sudo apt update
+          command: sudo apt-get update
       - run:
           name: list of upgradable packages
           command: sudo apt list --upgradable    
@@ -201,7 +201,7 @@ jobs:
                 sudo apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
       - run:
           name: update packages
-          command: sudo apt update          
+          command: sudo apt-get update          
       
       - run:
           name: Install CPU checker
