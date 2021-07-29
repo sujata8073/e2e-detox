@@ -183,6 +183,9 @@ jobs:
       - run:
           name: Check cpu status
           command: cat /proc/cpuinfo
+      - run:
+          name: Check cpu bit
+          command: egrep -c ' lm ' /proc/cpuinfo
       #- run:
         #  name: Install qem-kvm
          # command: sudo apt-get install qemu-kvm
