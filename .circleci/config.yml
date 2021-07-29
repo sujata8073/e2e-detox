@@ -181,13 +181,13 @@ commands:
 jobs:
 
   android-test:
-   # docker:
-    #    - image: cimg/openjdk:8.0
+    docker:
+        - image: cimg/openjdk:8.0
       # - image: juniper/openjnpr-container-vmx:bionic
-    macos:
-      xcode: 11.3.0
+    #macos:
+     # xcode: 11.3.0
     steps:
-      - run: xcodebuild -version
+     # - run: xcodebuild -version
       - attach_workspace:
           at: .
    
