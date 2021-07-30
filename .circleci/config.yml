@@ -1,4 +1,8 @@
+# .circleci/config.yaml
+
 version: 2.1
+orbs:
+  android: circleci/android@1.0.3
 
 commands:
 
@@ -279,12 +283,20 @@ jobs:
       - store_artifacts:
           path: ././reports
           destination: ./reports
-
-
 workflows:
-  version: 2
-
-  run_detox_tests:
+  test:
     jobs:
-      - android-test
+      # This job uses the Android machine image by default
+      - android/run-ui-tests:
+          # Use pre-steps and post-steps if necessary
+          # to execute custom steps before and afer any of the built-in steps
+          system-image: system-images;android-29;default;x8
+
+
+#workflows:
+  #version: 2
+
+  #run_detox_tests:
+   # jobs:
+      #- android-test
       #- ios-test
