@@ -174,8 +174,11 @@ commands:
 jobs:
 
   android-test:
-    docker:
-        - image: cimg/openjdk:8.0
+    executor:
+      name: android/android-machine
+      resource-class: medium
+    #docker:
+       # - image: cimg/openjdk:8.0
       # - image: juniper/openjnpr-container-vmx:bionic
     #macos:
      # xcode: 11.3.0
@@ -219,9 +222,9 @@ jobs:
       - run:
           name: Install CPU checker
           command: sudo apt-get install cpu-checker
-     # - run:
-        #  name: check KVM status
-         # command: sudo kvm-ok
+      - run:
+          name: check KVM status
+          command: sudo kvm-ok
       - checkout
       - node-version
       #- bundle-dependencies
@@ -283,20 +286,13 @@ jobs:
       - store_artifacts:
           path: ././reports
           destination: ./reports
+
+
+
 workflows:
-  test:
+  version: 2
+
+  run_detox_tests:
     jobs:
-      # This job uses the Android machine image by default
-      - android/run-ui-tests:
-          # Use pre-steps and post-steps if necessary
-          # to execute custom steps before and afer any of the built-in steps
-          system-image: system-images;android-29;default;x8
-
-
-#workflows:
-  #version: 2
-
-  #run_detox_tests:
-   # jobs:
-      #- android-test
+      - android-test
       #- ios-test
