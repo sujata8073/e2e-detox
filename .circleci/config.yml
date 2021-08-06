@@ -226,7 +226,7 @@ jobs:
           name: check KVM status
           command: sudo kvm-ok
       - checkout
-      - node-version
+      #- node-version
       #- bundle-dependencies
       #- npm-dependencies
       #- react-native-dependencies
