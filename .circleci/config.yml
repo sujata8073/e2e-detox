@@ -175,12 +175,12 @@ commands:
 jobs:
 
   android-test:
-    executor:
-      name: android/android-machine
-      resource-class: medium
-    #docker:
-       # - image: cimg/openjdk:8.0
-      # - image: juniper/openjnpr-container-vmx:bionic
+    #executor:
+      #name: android/android-machine
+      #resource-class: medium
+    docker:
+        - image: cimg/openjdk:8.0
+       #- image: juniper/openjnpr-container-vmx:bionic
     #macos:
      # xcode: 11.3.0
     steps:
