@@ -150,7 +150,7 @@ commands:
     steps:
       - run:
           name: download necessary packages
-          command: ./sdkmanager "system-images;android-23;google_apis;x86"
+          command: sdkmanager "system-images;android-23;google_apis;x86"
       - run:
           name: accept the license agreement
           command: ./sdkmanager --licenses
