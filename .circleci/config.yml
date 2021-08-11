@@ -156,7 +156,7 @@ commands:
           command: sdkmanager --licenses
       - run:
           name: create emulator
-          command: ./avdmanager create avd -n test -k "system-images;android-25;google_apis;x86_64" -b x86 -c 100M -d 7 -f
+          command: avdmanager create avd -n test -k "system-images;android-25;google_apis;x86_64" -b x86 -c 100M -d 7 -f
       #- run:
        #   name: create AVD
         #  command: echo "no" | avdmanager --verbose create avd --force --name "Pixel_3a_API_29" --package "system-images;android-29;google_apis;x86_64"
