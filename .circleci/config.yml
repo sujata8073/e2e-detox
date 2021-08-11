@@ -223,9 +223,9 @@ jobs:
       - run:
           name: Install CPU checker
           command: sudo apt-get install cpu-checker
-      - run:
-          name: check KVM status
-          command: sudo kvm-ok
+      #- run:
+       #   name: check KVM status
+        #  command: sudo kvm-ok
       - checkout
       #- node-version
       #- bundle-dependencies
