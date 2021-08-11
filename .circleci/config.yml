@@ -149,8 +149,17 @@ commands:
     description: "create and launch android emulators"
     steps:
       - run:
-          name: create AVD
-          command: echo "no" | avdmanager --verbose create avd --force --name "Pixel_3a_API_29" --package "system-images;android-29;google_apis;x86_64"
+          name: download necessary packages
+          command: ./sdkmanager "system-images;android-23;google_apis;x86"
+      - run:
+          name: accept the license agreement
+          command: ./sdkmanager --licenses
+      - run:
+          name: create emulator
+          command: ./avdmanager create avd -n test -k "system-images;android-23;google_apis;x86" -b x86 -c 100M -d 7 -f
+      #- run:
+       #   name: create AVD
+        #  command: echo "no" | avdmanager --verbose create avd --force --name "Pixel_3a_API_29" --package "system-images;android-29;google_apis;x86_64"
       
       #- run:
         #  name: start AVD
